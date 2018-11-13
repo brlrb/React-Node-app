@@ -4,7 +4,7 @@ const crudController = require('../server/controllers/crudController');
 
 
 // load all available datas
-router.get('/', crudController.loadEverything);
+router.get('/all', crudController.loadEverything);
 
 
 

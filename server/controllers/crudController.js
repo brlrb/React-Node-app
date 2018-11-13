@@ -19,22 +19,28 @@ exports.loadEverything = async (req, res) => {
 exports.create = async (req, res) => {
   console.log('*** CREATE START ***');
 
-  const create_post = new CRUD({
-    postName: req.body.postName,
-    description: req.body.description,
-    keywords: req.body.keywords,
-    isPublished: req.body.isPublished
-  });
+  // const create_post = new CRUD({
+  //   postName: req.body.postName,
+  //   description: req.body.description,
+  //   keywords: req.body.keywords,
+  //   isPublished: req.body.isPublished
+  // });
 
-  try {
-    const create = await create_post.save();
-  } catch (error) {
-    console.log("create save error: ", error);
-  }
+  // try {
+  //   const create = await create_post.save();
+  // } catch (error) {
+  //   console.log("create save error: ", error);
+  // }
   
+  console.log(req.body);
+
   console.log('*** CREATE END ***');
 
-  res.redirect('/');
+  
+  res.send(
+    `I received your POST request. This is what you sent me: ${req.body.post}`,
+  );
+
 };
 
 
